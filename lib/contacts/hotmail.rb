@@ -36,7 +36,7 @@ class Contacts
       if data.index("The e-mail address or password is incorrect")
         raise AuthenticationError, "Username and password do not match"
       elsif data != ""
-        raise AuthenticationError, "Required field must not be blank"
+        raise AuthenticationError, "Required field must not be blank: #{data.inspect}"
       elsif cookies == ""
         raise ConnectionError, PROTOCOL_ERROR
       end
